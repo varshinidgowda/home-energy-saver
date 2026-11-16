@@ -15,7 +15,7 @@ Inspired by: Energy Consumption Tracker (Product Hunt)
 - [Design System](DESIGN-SYSTEM.md)
 
 ## Design & Wireframes
-
+- View wireframes on [Figma](https://www.figma.com/design/irUJo2bXn4omk2AAI1TXnB/Wireframes?node-id=0-1&t=y4uc0wKEm4jQOpln-1)
 ## Run Locally
     git clone https://github.com/varshinidgowda/home-energy-saver.git
     cd home-energy-saver
