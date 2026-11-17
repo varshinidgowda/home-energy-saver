@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -45,19 +46,12 @@ export default function AddAppliance() {
       return;
     }
 
-    if (
-      !Number.isInteger(quantity) ||
-      quantity <= 0
-    ) {
+    if (!Number.isInteger(quantity) || quantity <= 0) {
       setMessage("Quantity must be a positive whole number.");
       return;
     }
 
-    if (
-      !Number.isFinite(hours) ||
-      hours <= 0 ||
-      hours > 24
-    ) {
+    if (!Number.isFinite(hours) || hours <= 0 || hours > 24) {
       setMessage("Daily usage must be between 0 and 24 hours.");
       return;
     }
@@ -80,19 +74,21 @@ export default function AddAppliance() {
   };
 
   return (
-    <div className="mx-auto max-w-2xl px-4 py-8">
-      <h1 className="mb-2 text-3xl font-bold">
+    <div className="mx-auto w-full max-w-2xl px-4 sm:px-6 py-6 sm:py-8">
+
+      <h1 className="mb-2 text-2xl sm:text-3xl font-bold">
         Add Appliance
       </h1>
 
-      <p className="mb-6 text-gray-500">
+      <p className="mb-5 sm:mb-6 text-sm sm:text-base text-gray-500">
         Enter your appliance details to track its electricity usage.
       </p>
 
       <form
         onSubmit={handleSubmit}
-        className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
+        className="w-full rounded-xl border border-gray-200 bg-white p-4 sm:p-6 shadow-sm"
       >
+
         <Input
           id="name"
           label="Appliance Name"
@@ -151,9 +147,12 @@ export default function AddAppliance() {
           </p>
         )}
 
-        <Button type="submit">
-          Add Appliance
-        </Button>
+        <div className="w-full sm:w-auto">
+          <Button type="submit">
+            Add Appliance
+          </Button>
+        </div>
+
       </form>
     </div>
   );
