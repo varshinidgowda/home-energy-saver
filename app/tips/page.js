@@ -17,7 +17,7 @@ export default function SavingTips() {
       ];
     }
 
-    if (appliance.includes("ac") || appliance.includes("air conditioner")) {
+    if (appliance === "ac" || appliance.includes("air conditioner")) {
       return [
         "Set AC temperature around 24–26°C.",
         "Clean AC filters regularly.",
@@ -65,27 +65,29 @@ export default function SavingTips() {
   };
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-8">
-      <h1 className="mb-2 text-3xl font-bold">
+    <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 py-6 sm:py-8">
+
+      <h1 className="mb-2 text-2xl sm:text-3xl font-bold">
         Energy Saving Tips
       </h1>
 
-      <p className="mb-6 text-gray-500">
+      <p className="mb-5 sm:mb-6 text-sm sm:text-base text-gray-500">
         Tips based on your added appliances.
       </p>
 
       {appliances.length === 0 ? (
-        <p className="text-gray-500">
+        <p className="rounded-lg border bg-white p-4 text-sm sm:text-base text-gray-500">
           Add appliances to see saving tips.
         </p>
       ) : (
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
           {appliances.map((appliance) => (
             <div
               key={appliance.id}
-              className="rounded-xl border bg-white p-5 shadow-sm"
+              className="w-full rounded-xl border bg-white p-4 sm:p-5 shadow-sm"
             >
-              <h2 className="mb-3 text-xl font-semibold">
+              <h2 className="mb-3 text-lg sm:text-xl font-semibold break-words">
                 ⚡ {appliance.name}
               </h2>
 
@@ -95,13 +97,17 @@ export default function SavingTips() {
 
               <ul className="space-y-2">
                 {getTips(appliance.name).map((tip, index) => (
-                  <li key={index} className="text-gray-600">
+                  <li
+                    key={index}
+                    className="text-sm sm:text-base text-gray-600"
+                  >
                     ✓ {tip}
                   </li>
                 ))}
               </ul>
             </div>
           ))}
+
         </div>
       )}
     </div>
