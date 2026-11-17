@@ -9,6 +9,7 @@ const links = [
   { href: "/add", label: "Add Appliance" },
   { href: "/report", label: "Usage Report" },
   { href: "/tips", label: "Saving Tips" },
+  { href: "/challenges", label: "🌱 Eco Challenges" },
 ];
 
 export default function Navbar() {
