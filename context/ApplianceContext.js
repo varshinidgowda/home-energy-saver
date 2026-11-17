@@ -16,7 +16,8 @@ export function ApplianceProvider({ children }) {
     setAppliances((prev) => prev.filter((a) => a.id !== id));
 
   // ===== CALCULATIONS =====
-  const monthlyUnits = (a) => (a.watts * a.hours * 30) / 1000;
+  const monthlyUnits = (a) =>
+  (a.watts * a.hours * (a.quantity || 1) * 30) / 1000;
   const totalUnits = appliances.reduce((sum, a) => sum + monthlyUnits(a), 0);
   const totalCost = totalUnits * rate;
   const topConsumer = appliances.length
